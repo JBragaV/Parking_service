@@ -1,0 +1,3 @@
+https://django-rql.readthedocs.io/en/latest/user_guide/
+https://pypi.org/project/django-rql/
+https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html

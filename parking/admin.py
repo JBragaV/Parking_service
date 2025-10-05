@@ -8,6 +8,7 @@ admin.site.site_header = 'Administração do JOCIMAR'
 @admin.register(ParkingRecord)
 class ParkingRercordAdmin(admin.ModelAdmin):
     list_display = 'id', 'vehicle', 'parking_spot', 'entry_time', 'exit_time'
+    list_display_links = 'id', 'vehicle', 'parking_spot'
     search_fields = 'vehicle__license_plate', 'parking_spot__spot_number'
     list_filter = 'vehicle', 'parking_spot'
 
@@ -17,9 +18,9 @@ class ParkingRercordAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
-
 @admin.register(ParkingSpot)
 class ParkingSpotAdmin(admin.ModelAdmin):
     list_display = 'id', 'spot_number', 'is_occupied'
+    list_display_links = 'id', 'spot_number'
     search_fields = 'spot_number', 'is_occupied'
     list_filter = 'is_occupied',

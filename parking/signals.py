@@ -3,6 +3,7 @@ from django.dispatch import receiver
 
 from .models import ParkingRecord
 
+
 @receiver(post_save, sender=ParkingRecord)
 def update_parking_spot_status(sender, instance, created, **kwargs):
     print('Created>>', created)

@@ -7,7 +7,7 @@ class VehicleType(models.Model):
     class Meta:
         verbose_name = 'Tipo Veículo'
         verbose_name_plural = 'Tipos Veículo'
-    
+
     name = models.CharField(max_length=50, unique=True, verbose_name='Veículo')
     description = models.TextField(blank=True, null=True, verbose_name='Descrição')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Criado em ')
