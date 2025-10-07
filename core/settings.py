@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'customers',
     'vehicles',
     'parking',
+
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -280,11 +282,23 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'dj_rql.drf.RQLFilterBackend'
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.IsAuthenticated',
     # ]
 }
 
+
+# drf_spetacular
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Parking Service API',
+    'DESCRIPTION': 'API do Parking service',
+    'VERSION': '1.0.0',
+}
+
+
+
+# JWT settings
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
