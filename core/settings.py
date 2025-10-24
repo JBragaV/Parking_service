@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'parking_services',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'parking_db',
+        'PORT': '5432'
     }
 }
 
@@ -303,3 +307,6 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+# Celiry
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
